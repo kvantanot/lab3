@@ -75,6 +75,37 @@ namespace lab3
                 }
             }
         }
+    }
 
+    public class MyStack
+    {
+        private String[] items;
+        private int count = 0;
+
+        public MyStack()
+        {
+            items = new String[10];
+        }
+
+        public void Push(String item)
+        {
+            if (count == 10)
+            {
+                throw (new Exception("Stack overflow"));
+            }
+            else
+            {
+                items[count] = item;
+                count++;
+            }
+        }
+
+        public string Pop()
+        {
+            if (count == 0)
+                throw (new Exception("Stack empty"));
+            count--;
+            return items[count];
+        }
     }
 }
